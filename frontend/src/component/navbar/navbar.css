@@ -1,0 +1,42 @@
+.navbar {
+  width: 100%;
+  height: 40px;
+  background-color: #272727;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 414px;
+}
+
+.navbar .content .brand {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+.navbar .content .link-page {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar .content .link-page p {
+  margin: 0px 8px 0px 8px;
+  color: white;
+  font-size: 14px;
+}
+
+.navbar .content .link-create-button {
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #067bf9;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
