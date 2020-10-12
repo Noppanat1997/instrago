@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import NavBar from "../component/navbar";
 import Card from "../component/card";
-import "./todoPage.css";
 
 const TodoPage = () => {
   const [selectedCard, setSelectedCard] = useState(null);
@@ -19,9 +18,9 @@ const TodoPage = () => {
   return (
     <div className="TodoPage">
       <NavBar />
-      <h1>Todo</h1>
+      <h1 style={{ fontSize: "48px", margin: "0.5rem 0" }}>Todo</h1>
       <div className="card-container">
-        {mock.map((ele, i) => <Card detail={ele} selected={selectedCard === i} key={i} onClick={() => setSelectedCard(i)}/>)}
+        {mock.map((ele, i) => <Card mode={"default"} detail={ele} selected={selectedCard === i} key={i} onClick={() => setSelectedCard(i)} />)}
       </div>
     </div>
   );
