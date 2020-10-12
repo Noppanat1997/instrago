@@ -1,0 +1,64 @@
+.Card {
+  padding: 1rem 1rem;
+  border-radius: 8px;
+  background-color: white;
+  height: 60px;
+  transition: all ease-in-out 150ms;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.Card:hover {
+  box-shadow: 0 0 0 3px rgba(6, 123, 249, 0.4);
+}
+
+.selected {
+  box-shadow: 0 0 0 3px rgba(6, 123, 249, 0.7);
+}
+
+.Card .container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.info .task {
+  font-size: 20px;
+}
+
+.info .time {
+  font-size: 16px;
+  color: #5A5A5A;
+}
+
+.btn-group button {
+  border: none;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin: 0 5px;
+  font-size: 18px;
+  transition: all ease-in-out 100ms;
+}
+
+.btn-group #edit:hover {
+  background-color: #6C757C;
+  color: white;
+}
+
+.btn-group #done:hover {
+  background-color: #2FA74E;
+  color: white;
+}
+
+.btn-group #del:hover {
+  background-color: #DA3648;
+  color: white;
+}
+
+.btn-group button:focus {
+  cursor: pointer;
+  outline: none;
+}
