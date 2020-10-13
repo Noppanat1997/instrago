@@ -28,7 +28,7 @@ const Card = ({ detail, selected, mode, onClick }) => {
 
   return (
     <div className={selected ? "Card selected" : "Card"} onClick={onClick}>
-      {mode === "edit" ? <div className="container">
+      {mode === "create" ? <div className="container">
         <div className="info">
           <input className="task-input" type="text" placeholder="Todo..." required /><br />
           <input className="time-input" type="datetime-local" defaultValue={currentDate() + "T" + currentTime()} min={currentDate() + "T" + currentTime()} required />
