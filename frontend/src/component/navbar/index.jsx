@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="content">
-        <div className="brand">TODONA</div>
+        <div className="brand"><i className="fab fa-xing" style={{fontSize: "22px"}}></i> TODONA</div>
         <div className="link-page">
           <Link to="/" onClick={() => setMode(0)} style={mode === "/" ? { color: "#009BFF" } : null}>Todo</Link>
           <Link to="/done" onClick={() => setMode(1)} style={mode === "/done" ? { color: "#009BFF" } : null}>Done</Link>
