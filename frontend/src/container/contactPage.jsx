@@ -17,12 +17,13 @@ const ContactPage = () => {
         }}
       >
         <div className="info">
-          <h2 style={{marginBottom: "1rem"}}>James Client</h2>
-          <p>Email : jame123@gmail.com</p>
-          <p>Tel : 081-234-5678</p>
+          <h2>ปลาหยุด จันทร์อังคาร</h2>
+          <div style={{backgroundColor: "#c8c8c8", width: "25vw", height: "1px", margin: "1rem 0"}}></div>
+          <p>Email : fishstop@todona.com</p>
+          <p>Tel : 080-123-4567</p>
         </div>
         <div className="pic">
-          <img src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png" alt="profile-pic"
+          <img src="https://images.unsplash.com/photo-1541647376583-8934aaf3448a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="profile-pic"
           style={{
             borderRadius: "50%",
             width: "80px",

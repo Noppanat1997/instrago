@@ -9,10 +9,16 @@
 }
 
 .Card:hover {
-  box-shadow: 0 0 0 3px rgba(6, 123, 249, 0.4);
+  box-shadow: 0 0 0 2px rgba(6, 123, 249, 0.4);
 }
 
 .selected {
+  cursor: default;
+  box-shadow: 0 0 0 3px rgba(6, 123, 249, 0.7);
+}
+
+.selected:hover {
+  cursor: default;
   box-shadow: 0 0 0 3px rgba(6, 123, 249, 0.7);
 }
 
