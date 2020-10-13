@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import TodoPage from "./container/todoPage";
 import DonePage from "./container/donePage";
 import ContactPage from "./container/contactPage";
+import CreatePage from "./container/createPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route exact path="/" component={TodoPage} />
           <Route exact path="/done" component={DonePage} />
           <Route exact path="/contact" component={ContactPage} />
+          <Route exact path="/create" component={CreatePage} />
           <Navbar />
         </Switch>
       </Router>

@@ -2,7 +2,7 @@
   padding: 1rem 1rem;
   border-radius: 8px;
   background-color: white;
-  height: 60px;
+  height: fit-content;
   transition: all ease-in-out 150ms;
   margin-bottom: 1rem;
   cursor: pointer;
@@ -30,6 +30,10 @@
   height: 100%;
 }
 
+.Card .container .info {
+  flex: 1 1 auto;
+}
+
 .info .task {
   font-size: 20px;
 }
@@ -37,6 +41,37 @@
 .info .time {
   font-size: 16px;
   color: #5A5A5A;
+}
+
+.info .task-input {
+  width: 90%;
+  font-size: 22px;
+  font-weight: bold;
+  color: #247fe0;
+  background-color: #f3f3f3;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 0 2px transparent;
+  transition: all ease-in-out 200ms;
+}
+
+.info .task-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(6, 123, 249, 0.4);
+}
+
+.info .time-input {
+  font-size: 18px;
+  color: #5A5A5A;
+  margin-top: 5px;
+  border: none;
+  border-bottom: solid transparent 1px;
+  transition: all ease-in-out 200ms;
+}
+
+.info .time-input:focus {
+  outline: none;
 }
 
 .btn-group button {
