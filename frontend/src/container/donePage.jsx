@@ -5,14 +5,8 @@ import Card from "../component/card";
 const DonePage = () => {
   const [selectedCard, setSelectedCard] = useState(null);
   const mock = [{
-    taskName: "🍔 Dinner",
-    time: "8:00 PM"
-  }, {
-    taskName: "🎮 Play Game",
-    time: "9:00 PM"
-  }, {
-    taskName: "📚 Study",
-    time: "10:00 PM"
+    taskName: "💪 Excercise",
+    time: "2020-10-30T17:00"
   }]
 
   return (

@@ -6,13 +6,13 @@ const TodoPage = () => {
   const [selectedCard, setSelectedCard] = useState(null);
   const mock = [{
     taskName: "🍔 Dinner",
-    time: "8:00 PM"
+    time: "2020-10-30T20:00"
   }, {
     taskName: "🎮 Play Game",
-    time: "9:00 PM"
+    time: "2020-10-30T21:00"
   }, {
     taskName: "📚 Study",
-    time: "10:00 PM"
+    time: "2020-10-30T22:00"
   }]
 
   return (
