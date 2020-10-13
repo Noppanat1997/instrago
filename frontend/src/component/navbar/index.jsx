@@ -18,7 +18,7 @@ const Navbar = () => {
           <Link to="/done" onClick={() => setMode(1)} style={mode === "/done" ? { color: "#009BFF" } : null}>Done</Link>
           <Link to="/contact" onClick={() => setMode(2)} style={mode === "/contact" ? { color: "#009BFF" } : null}>Contact</Link>
         </div>
-        <button className="create-button">New Task</button>
+        <Link to="/create"><button className="create-button">New Task</button></Link>
       </div>
     </div>
   );
