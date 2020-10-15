@@ -1,5 +1,5 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./card.css";
 
 const Card = ({ detail, selected, mode, onClick }) => {
@@ -43,7 +43,7 @@ const Card = ({ detail, selected, mode, onClick }) => {
           </div>
           {selected && <div className="btn-group">
             {mode !== "done" && <button title="Mark as Done" id="done"><i className="fas fa-check" /></button>}
-            {mode === "default" && <button title="Edit Task" id="edit"><i className="fas fa-pen" /></button>}
+            {mode === "default" && <Link to="/edit"><button title="Edit Task" id="edit"><i className="fas fa-pen" /></button></Link>}
             {mode === "done" && <button title="Undone Task" id="edit"><i className="fas fa-undo" /></button>}
             {(mode !== "create" || mode !== "edit") && <button title="Delete Task" id="del"><i className="fa fa-trash-alt" /></button>}
           </div>}
