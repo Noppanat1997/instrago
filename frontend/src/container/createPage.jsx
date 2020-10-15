@@ -14,7 +14,7 @@ const CreatePage = () => {
       <NavBar />
       <h1 style={{ fontSize: "48px", margin: "0.5rem 0" }}>Create</h1>
       <div className="card-container">
-        <Card mode={"create"} detail={mock}/>
+        <Card mode={"create"}/>
       </div>
     </div>
   );

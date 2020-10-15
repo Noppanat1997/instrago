@@ -30,7 +30,7 @@ const Card = ({ detail, selected, mode, onClick }) => {
     <div className={selected ? "Card selected" : "Card"} onClick={onClick}>
       {mode === "create" || mode === "edit" ? <div className="container">
         <div className="info">
-          <input className="task-input" type="text" placeholder="Todo..." defaultValue={detail ? detail.taskName : "Todo..."} required /><br />
+          <input className="task-input" type="text" placeholder="Todo..." defaultValue={detail ? detail.taskName : null} required /><br />
           <input className="time-input" type="datetime-local" defaultValue={detail ? detail.time : currentDate() + "T" + currentTime()} min={currentDate() + "T" + currentTime()} required />
         </div>
         <div className="btn-group">
