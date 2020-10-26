@@ -17,7 +17,7 @@ function App() {
           <Route exact path="/done" component={DonePage} />
           <Route exact path="/contact" component={ContactPage} />
           <Route exact path="/create" component={CreatePage} />
-          <Route exact path="/edit" component={EditPage} />
+          <Route exact path="/edit/:id" component={EditPage} />
           <Navbar />
         </Switch>
       </Router>

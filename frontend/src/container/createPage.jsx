@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import NavBar from "../component/navbar";
 import Card from "../component/card";
+import {useHistory} from "react-router-dom"
+import axios from "axios"
 
 const CreatePage = () => {
-  const [selectedCard, setSelectedCard] = useState(null);
-  const mock = {
-    taskName: "🍔 Dinner",
-    time: "2020-10-30T20:00"
+  const history = useHistory()
+
+  async function  onSubmit(task,time) {
+    await axios.post(`http://localhost:1000/api/tasks`, {
+      task: task,
+      time:  time
+    })
+    history.push("/")
   }
 
   return (
@@ -14,7 +20,7 @@ const CreatePage = () => {
       <NavBar />
       <h1 style={{ fontSize: "48px", margin: "0.5rem 0" }}>Create</h1>
       <div className="card-container">
-        <Card mode={"create"}/>
+        <Card onSubmit={onSubmit} mode={"create"}/>
       </div>
     </div>
   );
