@@ -1,16 +1,16 @@
-import React, { useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./card.css";
 
-const Card = ({ detail, selected, mode, onClick, onSubmit,onEdit,onDone, onUnDone }) => {
+const Card = ({ detail, selected, mode, onClick, onSubmit, onEdit, onDone, onUnDone, onDelete }) => {
   const [task, setTask] = useState("");
   const [time, setTime] = useState(currentDate() + "T" + currentTime());
 
-  useEffect(()=>{
-    if(mode === "edit"){
+  useEffect(() => {
+    if (mode === "edit") {
       setTask(detail?.task)
       setTime(detail?.time)
     }
-  },[detail])
+  }, [detail])
 
   function currentDate() {
     const d = new Date();
@@ -62,7 +62,7 @@ const Card = ({ detail, selected, mode, onClick, onSubmit,onEdit,onDone, onUnDon
             <button
               type="submit"
               title="Save"
-              onClick={()=>onSubmit(task, time)}
+              onClick={() => onSubmit(task, time)}
               id="done"
             >
               <i className="fas fa-check" />
@@ -70,42 +70,42 @@ const Card = ({ detail, selected, mode, onClick, onSubmit,onEdit,onDone, onUnDon
           </div>
         </div>
       ) : (
-        <div className="container">
-          <div className="info">
-            <h4 className="task">{detail.task}</h4>
-            <p className="time">
-              {new Date(detail.time).toLocaleString([], {
-                dateStyle: "long",
-                timeStyle: "short",
-              })}
-            </p>
-          </div>
-          {selected && (
-            <div className="btn-group">
-              {mode !== "done" && (
-                <button title="Mark as Done" id="done">
-                  <i className="fas fa-check" onClick={onDone} />
-                </button>
-              )}
-              {mode === "default" && (
-                  <button title="Edit Task" onClick={onEdit} id="edit">
+          <div className="container">
+            <div className="info">
+              <h4 className="task">{detail.task}</h4>
+              <p className="time">
+                {new Date(detail.time).toLocaleString([], {
+                  dateStyle: "long",
+                  timeStyle: "short",
+                })}
+              </p>
+            </div>
+            {selected && (
+              <div className="btn-group">
+                {mode !== "done" && (
+                  <button title="Mark as Done" id="done" onClick={onDone}>
+                    <i className="fas fa-check" />
+                  </button>
+                )}
+                {mode === "default" && (
+                  <button title="Edit Task" id="edit" onClick={onEdit}>
                     <i className="fas fa-pen" />
                   </button>
-              )}
-              {mode === "done" && (
-                <button title="Undone Task" onClick={onUnDone} id="edit">
-                  <i className="fas fa-undo" />
-                </button>
-              )}
-              {(mode !== "create" || mode !== "edit") && (
-                <button title="Delete Task" id="del">
-                  <i className="fa fa-trash-alt" />
-                </button>
-              )}
-            </div>
-          )}
-        </div>
-      )}
+                )}
+                {mode === "done" && (
+                  <button title="Undone Task" id="edit" onClick={onUnDone}>
+                    <i className="fas fa-undo" />
+                  </button>
+                )}
+                {(mode !== "create" || mode !== "edit") && (
+                  <button title="Delete Task" id="del" onClick={onDelete}>
+                    <i className="fa fa-trash-alt" />
+                  </button>
+                )}
+              </div>
+            )}
+          </div>
+        )}
     </div>
   );
 };

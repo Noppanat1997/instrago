@@ -22,16 +22,27 @@ const TodoPage = () => {
     history.push(`/edit/${id}`);
   };
 
-  const onDone = async (id,index) =>{
-    try{
+  const onDone = async (id) => {
+    try {
       await axios.patch(`http://localhost:1000/api/tasks/${id}`, {
         isFinished: true
       });
-      
-      const newTasks = tasks
-      setTasks(newTasks.splice(index,1))
-    } catch(err) {
-      console.log(err)
+
+      const newTasks = tasks.filter(ele => ele._id !== id);
+      setTasks(newTasks);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  const onDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:1000/api/tasks/${id}`);
+
+      const newTasks = tasks.filter(ele => ele._id !== id);
+      setTasks(newTasks);
+    } catch (err) {
+      console.log(err);
     }
   }
 
@@ -40,17 +51,18 @@ const TodoPage = () => {
       <NavBar />
       <h1 style={{ fontSize: "48px", margin: "0.5rem 0" }}>Todo</h1>
       <div className="card-container">
-        {tasks.map((ele, i) => (
+        {tasks.length !== 0 ? tasks.map((ele, i) => (
           <Card
             mode={"default"}
-            onDone={()=>onDone(ele._id,i)}
-            onEdit={()=>onEdit(ele._id)}
+            onDone={() => onDone(ele._id)}
+            onEdit={() => onEdit(ele._id)}
+            onDelete={() => onDelete(ele._id)}
             detail={ele}
             selected={selectedCard === i}
             key={i}
             onClick={() => setSelectedCard(i)}
           />
-        ))}
+        )) : <p style={{ textAlign: "center" }}>Hooray! You have no more task todo.</p>}
       </div>
     </div>
   );

@@ -16,15 +16,25 @@ const DonePage = () => {
     fetchData();
   }, []);
 
-  const onUnDone = async (id, index) => {
-    console.log(id)
+  const onUnDone = async (id) => {
     try {
       await axios.patch(`http://localhost:1000/api/tasks/${id}`, {
-        isFinished: false,
+        isFinished: false
       });
 
-      const newTasks = tasks;
-      setTasks(newTasks.splice(index, 1));
+      const newTasks = tasks.filter(ele => ele._id !== id);
+      setTasks(newTasks);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const onDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:1000/api/tasks/${id}`);
+
+      const newTasks = tasks.filter(ele => ele._id !== id);
+      setTasks(newTasks);
     } catch (err) {
       console.log(err);
     }
@@ -35,16 +45,17 @@ const DonePage = () => {
       <NavBar />
       <h1 style={{ fontSize: "48px", margin: "0.5rem 0" }}>Done</h1>
       <div className="card-container">
-        {tasks.map((ele, i) => (
+        {tasks.length !== 0 ? tasks.map((ele, i) => (
           <Card
             mode={"done"}
-            onUndone={() => onUnDone(ele._id, i)}
+            onUnDone={() => onUnDone(ele._id)}
+            onDelete={() => onDelete(ele._id)}
             detail={ele}
             selected={selectedCard === i}
             key={i}
             onClick={() => setSelectedCard(i)}
           />
-        ))}
+        )) : <p style={{ textAlign: "center" }}>You haven't done any task.</p>}
       </div>
     </div>
   );

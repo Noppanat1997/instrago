@@ -17,7 +17,7 @@ const ContactPage = () => {
         }}
       >
         <div className="info">
-          <h2>ปลาหยุด จันทร์อังคาร</h2>
+          <h2>ฉันรัก ประเทศไทย</h2>
           <div style={{backgroundColor: "#c8c8c8", width: "25vw", height: "1px", margin: "1rem 0"}}></div>
           <p>Email : fishstop@todona.com</p>
           <p>Tel : 080-123-4567</p>
