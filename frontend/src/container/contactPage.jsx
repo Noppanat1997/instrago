@@ -4,7 +4,6 @@ import NavBar from "../component/navbar";
 const ContactPage = () => {
   return (
     <div className="ContactPage">
-      <NavBar />
       <h1 style={{ fontSize: "48px", margin: "0.5rem 0" }}>Contact</h1>
       <div className="card-container"
         style={{
