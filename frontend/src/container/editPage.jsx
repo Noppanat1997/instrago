@@ -28,7 +28,6 @@ const EditPage = () => {
 
   return (
     <div className="EditPage">
-      <NavBar />
       <h1 style={{ fontSize: "48px", margin: "0.5rem 0" }}>Edit</h1>
       <div className="card-container">
         <Card onSubmit={onSubmit} mode={"edit"} detail={task} />

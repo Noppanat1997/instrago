@@ -8,21 +8,19 @@ import ContactPage from "./container/contactPage";
 import CreatePage from "./container/createPage";
 import EditPage from "./container/editPage";
 
-function App() {
+export default function App()  {
   return (
     <div className="App">
       <Router>
+        <Navbar />
         <Switch>
           <Route exact path="/" component={TodoPage} />
           <Route exact path="/done" component={DonePage} />
           <Route exact path="/contact" component={ContactPage} />
           <Route exact path="/create" component={CreatePage} />
           <Route exact path="/edit/:id" component={EditPage} />
-          <Navbar />
         </Switch>
       </Router>
     </div>
   );
 }
-
-export default App;

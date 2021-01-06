@@ -42,7 +42,6 @@ const DonePage = () => {
 
   return (
     <div className="TodoPage">
-      <NavBar />
       <h1 style={{ fontSize: "48px", margin: "0.5rem 0" }}>Done</h1>
       <div className="card-container">
         {tasks.length !== 0 ? tasks.map((ele, i) => (
